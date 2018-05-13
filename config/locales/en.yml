@@ -31,6 +31,7 @@
 
 en:
   hello: "Hello world"
+  destroy_msg: 'Are you sure want to delete?'
   common:
     created_successfully: '%{model_name} created successfully'
     updated_successfully: '%{model_name} updated successfully'
