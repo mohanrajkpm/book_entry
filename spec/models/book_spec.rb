@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Book, :type => :model do
   
   context "Access the books validations" do
-      @book = FactoryGirl.create(:book)
+      @book = FactoryGirl.create(:book, name: 'c', isbn: 'c-1')
       
 	  it "book name check presence" do
 	    @book.name = nil
