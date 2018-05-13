@@ -1,10 +1,17 @@
 class BooksController < ApplicationController
+	
+
 	def index
 		@books = Book.all
-		respond_to do |format|
-  			format.html
-  			format.js
-		end
+
+		# respond_to do |format|
+  # 			format.html
+  # 			format.js
+		# end
+	end
+
+	def new
+		@book = Book.new
 	end
 
 	def create
@@ -13,6 +20,10 @@ class BooksController < ApplicationController
 			flash[:notice] = t('common.created_successfully', model_name: Book.name)
 			redirect_to books_path
 		end	
+	end
+
+	def edit
+		@book = Book.find_by(id: params[:id])
 	end
 
 	def update
