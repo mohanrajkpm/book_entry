@@ -1,0 +1,31 @@
+<h2>List Books</h2>
+            
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= sortable "name" %></th>
+        <th><%= sortable "author" %></th>
+        <th><%= sortable "isbn" %></th>
+        <th><%= sortable "price" %></th>
+        <th><%= sortable "category" %></th>
+        <th><%= sortable "publish" %></th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= link_to book.name, edit_book_path(book) %></td>
+          <td><%= book.author %></td>
+          <td><%= book.isbn %></td>
+          <td><%= book.price.to_f %></td>
+          <td><%= book.category %></td>
+          <td><%= book.publish == true ? 'Y' : 'N'%></td>
+          <td><%= link_to 'Delete', 
+             book_path(book), 
+                         method: :delete, 
+                         data: { confirm: t('destroy_msg') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

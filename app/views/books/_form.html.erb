@@ -1,15 +1,5 @@
-<div class="row">
-	  <div class="col-12 offset-3">
-
+<h1>Book Register</h1>
 <%= simple_form_for @book, html: { class: 'form-horizontal' } do |f| %>
-
-
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Book Register</h3>
-        </div>
-        <div class="panel-body">
- 
 	<%= f.input :name %>
 	<%= f.input :author %>
 	<%= f.input :isbn %>
@@ -17,9 +7,6 @@
 	<%= f.input :category %>
 	<%= f.input :publish, as: :boolean %>
 	<%= f.submit 'Save'%>
-	       </div>
-    </div>
-
 <% end %>
-</div>
-</div>
+<%= link_to 'Back', books_path, class: 'btn btn-primary'
+ %>
